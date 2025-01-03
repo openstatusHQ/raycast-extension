@@ -23,3 +23,17 @@ export const WhoamiSchema = z.object({
   name: z.string(),
   slug: z.string(),
 });
+
+
+export const StatusEnum = ['investigating', 'identified', 'monitoring', 'resolved'] as const;
+
+export const StatusReportSchema = z.object({
+  title: z.string(),
+  status: z.enum(StatusEnum),
+  monitorIds: z.array(z.number()),
+  pageId: z.number(),
+  date: z.string(),
+  message: z.string()
+})
+
+export type StatusReport = z.infer<typeof StatusReportSchema>;
