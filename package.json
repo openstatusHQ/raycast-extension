@@ -3,7 +3,7 @@
   "name": "openstatus",
   "title": "OpenStatus",
   "description": "Manage your OpenStatus monitors, Incidents and status page",
-  "icon": "extension-icon.png",
+  "icon": "OpenStatus.png",
   "author": "thibaultleouay",
   "owner": "openstatus",
   "categories": [
@@ -13,15 +13,32 @@
   "commands": [
     {
       "name": "show-monitors",
-      "title": "Show monitors",
-      "subtitle": "List all your monitors ",
-      "description": "",
-      "mode": "no-view"
+      "title": "Show Monitors",
+      "subtitle": "View all your active monitors",
+      "description": "View all your monitors from your OpenStatus account",
+      "mode": "view"
+    },
+    {
+      "name": "create-status-report",
+      "title": "Create Status Report",
+      "description": "Create Status Report",
+      "mode": "view"
+    }
+  ],
+  "preferences": [
+    {
+      "name": "access_token",
+      "description": "Enter your OpenStatus Access Token",
+      "type": "password",
+      "title": "Access Token",
+      "required": true
     }
   ],
   "dependencies": {
     "@raycast/api": "^1.88.4",
-    "@raycast/utils": "^1.17.0"
+    "@raycast/utils": "^1.18.1",
+    "node-fetch": "^3.3.2",
+    "zod": "^3.24.1"
   },
   "devDependencies": {
     "@raycast/eslint-config": "^1.0.11",
@@ -29,7 +46,7 @@
     "@types/react": "18.3.3",
     "eslint": "^8.57.0",
     "prettier": "^3.3.3",
-    "typescript": "^5.4.5"
+    "typescript": "^5.7.2"
   },
   "scripts": {
     "build": "ray build",
