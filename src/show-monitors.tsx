@@ -45,7 +45,7 @@ export default function ShowMonitors() {
                 <Action
                   title="Trigger Monitor Execution"
                   onAction={async () => {
-                    fetch(`https://api.openstatus.dev/v1/monitor/${monitor.id}/trigger`, {
+                    await fetch(`https://api.openstatus.dev/v1/monitor/${monitor.id}/trigger`, {
                       headers: {
                         "x-openstatus-key": `${preferences.access_token}`,
                       },
