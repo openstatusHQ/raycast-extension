@@ -5,7 +5,6 @@
   "description": "Manage your OpenStatus monitors, Incidents and status page",
   "icon": "OpenStatus.png",
   "author": "thibaultleouay",
-  "owner": "openstatus",
   "categories": [
     "Developer Tools"
   ],
